@@ -1,0 +1,27 @@
+body {
+    background-color: #00ccff;
+    text-align: center;
+  }
+  
+  #hood-image {
+    width: 50%;
+    padding-top: 20px;
+  }
+  
+  #generate-button {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #FF6347;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 30px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  #hearts-image {
+    width: 30%;
+    margin-top: 20px;
+  }
+  
+  
