@@ -1,167 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Love Letter</title>
-    <style>
-      body {
-        font-family: "American Typewriter", sans-serif;
-        text-align: center;
-        background-color: #f0f0f0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Letter</title>
+  <style>
+    body {
+      font-family: "American Typewriter", sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
 
-      #letter-container {
-        width: 60%;
-        text-align: left;
-        padding: 20px;
-        box-shadow: 2 4px 8px rgba(0, 0, 0, 0.1);
-        position: relative; /* Added position relative for absolute positioning */
-      }
+    #letter-container {
+      width: 90%; /* Updated width to 90% */
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
 
-      .heart-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); /* Center the heart container */
-      }
+    .heart-container {
+      position: relative;
+      margin-top: 20px;
+    }
 
-      .heart-1,
-      .heart-2,
-      .heart-3 {
-        position: absolute;
-      }
+    .heart-1,
+    .heart-2,
+    .heart-3 {
+      position: absolute;
+    }
 
-      .heart-1 {
-        background-color: red;
-        filter: drop-shadow(0px 0px 5px var(--drop-shadow));
-        height: 150px;
-        width: 150px;
-        margin: 0 auto;
-        transform: rotate(-45deg);
-      }
+    .heart-1 {
+      /* Adjusted positioning and size */
+      top: -75px;
+      left: calc(50% - 75px);
+    }
 
-      .heart-1:before,
-      .heart-1:after {
-        content: "";
-        position: absolute;
-        background-color: red;
-        border-radius: 50%;
-        height: 150px;
-        width: 150px;
-      }
+    .heart-2 {
+      /* Adjusted positioning */
+      top: -60px;
+      left: calc(50% - 60px);
+    }
 
-      .heart-1:before {
-        top: -75px;
-      }
+    .heart-3 {
+      /* Adjusted positioning */
+      top: -45px;
+      left: calc(50% - 45px);
+    }
 
-      .heart-1:after {
-        left: 75px;
-      }
+    #click-me-text {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #000;
+    }
 
-      .heart-2 {
-        background-color: rgb(255, 0, 85);
-        filter: drop-shadow(0px 0px 5px var(--drop-shadow));
-        height: 120px;
-        width: 120px;
-        margin: 0 auto;
-        transform: rotate(-45deg);
-        top: 30px;
-        left: 16px;
-      }
-
-      .heart-2:before,
-      .heart-2:after {
-        content: "";
-        position: absolute;
-        background-color: rgb(255, 0, 85);
-        border-radius: 50%;
-        height: 120px;
-        width: 120px;
-      }
-
-      .heart-2:before {
-        top: -60px;
-      }
-
-      .heart-2:after {
-        left: 60px;
-      }
-
-      .heart-3 {
-        background-color: rgb(255, 60, 125);
-        filter: drop-shadow(0px 0px 5px var(--drop-shadow));
-        height: 90px;
-        width: 90px;
-        margin: 0 auto;
-        transform: rotate(-45deg);
-        top: 73px;
-        left: 32px;
-        cursor: pointer;
-      }
-
-      .heart-3:before,
-      .heart-3:after {
-        content: "";
-        position: absolute;
-        background-color: rgb(255, 60, 125);
-        border-radius: 50%;
-        height: 90px;
-        width: 90px;
-      }
-
-      .heart-3:before {
-        top: -45px;
-      }
-
-      .heart-3:after {
-        left: 45px;
-      }
-
-
-      #click-me-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(80%, 160%);
-        font-size: 20px;
-        color: #fff;
-        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
-        display: flex; /* Use flexbox to align items */
-        align-items: center; /* Center vertically within the container */
-      }
-      
-      #click-me-text .heart-emoji {
-        margin-left: 5px; /* Add a margin between "Click Me" and the heart emoji */
-      }
-      
-
-      #open-your-heart {
-        position: absolute;
-        top: -200%; /* Adjust the top value to position above the heart container */
-        left: 55%;
-        transform: translateX(-50%);
-        font-size: 2.0rem;
-        color: #0c0c0c;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        z-index: 1;
-      }
-
-      #love-letter-container {
-        width: 60%;
-        text-align: left;
-        padding: 20px;
-        background-color: #ff66b2; /* Dark pink background */
-        border: 5px solid black; /* Light pink border */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin: 0 auto;
-        overflow: hidden; /* Hide the overflow to create a scrolling effect */
-      }
+    #love-letter-container {
+      width: 90%; /* Updated width to 90% */
+      margin: 20px auto; /* Adjusted margin */
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
   
     </style>
   </head>
