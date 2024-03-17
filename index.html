@@ -1,240 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Love Letter</title>
-    <style>
-      body {
-        font-family: "American Typewriter", sans-serif;
-        text-align: center;
-        background-color: #f0f0f0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-      }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Love Letter</title>
+  <style>
+    body {
+      font-family: "American Typewriter", sans-serif;
+      text-align: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 0;
+    }
 
-      #letter-container {
-        width: 60%;
-        text-align: left;
-        padding: 20px;
-        box-shadow: 2 4px 8px rgba(0, 0, 0, 0.1);
-        position: relative; /* Added position relative for absolute positioning */
-      }
+    #letter-container {
+      width: 90%; /* Adjusted width */
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      position: relative; /* Added position relative */
+    }
 
-      .heart-container {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); /* Center the heart container */
-      }
+    .heart-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /* Center the heart container */
+    }
 
-      .heart-1,
-      .heart-2,
-      .heart-3 {
-        position: absolute;
-      }
+    .heart-1,
+    .heart-2,
+    .heart-3 {
+      position: absolute;
+    }
 
-      .heart-1 {
-        background-color: red;
-        filter: drop-shadow(0px 0px 5px var(--drop-shadow));
-        height: 150px;
-        width: 150px;
-        margin: 0 auto;
-        transform: rotate(-45deg);
-      }
+    .heart-1 {
+      background-color: red;
+      filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+      height: 150px;
+      width: 150px;
+      margin: 0 auto;
+      transform: rotate(-45deg);
+      top: 0%;
+      left: 35%;
+    }
 
-      .heart-1:before,
-      .heart-1:after {
-        content: "";
-        position: absolute;
-        background-color: red;
-        border-radius: 50%;
-        height: 150px;
-        width: 150px;
-      }
+    .heart-1:before,
+    .heart-1:after {
+      content: "";
+      position: absolute;
+      background-color: red;
+      border-radius: 50%;
+      height: 150px;
+      width: 150px;
+    }
 
-      .heart-1:before {
-        top: -75px;
-      }
+    .heart-1:before {
+      top: -75px;
+    }
 
-      .heart-1:after {
-        left: 75px;
-      }
+    .heart-1:after {
+      left: 75px;
+    }
 
-      .heart-2 {
-        background-color: rgb(255, 0, 85);
-        filter: drop-shadow(0px 0px 5px var(--drop-shadow));
-        height: 120px;
-        width: 120px;
-        margin: 0 auto;
-        transform: rotate(-45deg);
-        top: 30px;
-        left: 16px;
-      }
+    .heart-2 {
+      background-color: rgb(255, 0, 85);
+      filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+      height: 120px;
+      width: 120px;
+      margin: 0 auto;
+      transform: rotate(-45deg);
+      top: 20%;
+      left: 17%;
+    }
 
-      .heart-2:before,
-      .heart-2:after {
-        content: "";
-        position: absolute;
-        background-color: rgb(255, 0, 85);
-        border-radius: 50%;
-        height: 120px;
-        width: 120px;
-      }
+    .heart-2:before,
+    .heart-2:after {
+      content: "";
+      position: absolute;
+      background-color: rgb(255, 0, 85);
+      border-radius: 50%;
+      height: 120px;
+      width: 120px;
+    }
 
-      .heart-2:before {
-        top: -60px;
-      }
+    .heart-2:before {
+      top: -60px;
+    }
 
-      .heart-2:after {
-        left: 60px;
-      }
+    .heart-2:after {
+      left: 60px;
+    }
 
-      .heart-3 {
-        background-color: rgb(255, 60, 125);
-        filter: drop-shadow(0px 0px 5px var(--drop-shadow));
-        height: 90px;
-        width: 90px;
-        margin: 0 auto;
-        transform: rotate(-45deg);
-        top: 73px;
-        left: 32px;
-        cursor: pointer;
-      }
+    .heart-3 {
+      background-color: rgb(255, 60, 125);
+      filter: drop-shadow(0px 0px 5px var(--drop-shadow));
+      height: 90px;
+      width: 90px;
+      margin: 0 auto;
+      transform: rotate(-45deg);
+      top: 40%;
+      left: 5%;
+      cursor: pointer;
+    }
 
-      .heart-3:before,
-      .heart-3:after {
-        content: "";
-        position: absolute;
-        background-color: rgb(255, 60, 125);
-        border-radius: 50%;
-        height: 90px;
-        width: 90px;
-      }
+    .heart-3:before,
+    .heart-3:after {
+      content: "";
+      position: absolute;
+      background-color: rgb(255, 60, 125);
+      border-radius: 50%;
+      height: 90px;
+      width: 90px;
+    }
 
-      .heart-3:before {
-        top: -45px;
-      }
+    .heart-3:before {
+      top: -45px;
+    }
 
-      .heart-3:after {
-        left: 45px;
-      }
+    .heart-3:after {
+      left: 45px;
+    }
 
+    #click-me-text {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #000;
+    }
 
-      #click-me-text {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(80%, 160%);
-        font-size: 20px;
-        color: #fff;
-        text-shadow: -2px -2px 0 black, 2px -2px 0 black, -2px 2px 0 black, 2px 2px 0 black;
-        display: flex; /* Use flexbox to align items */
-        align-items: center; /* Center vertically within the container */
-      }
-      
-      #click-me-text .heart-emoji {
-        margin-left: 5px; /* Add a margin between "Click Me" and the heart emoji */
-      }
-      
+    #love-letter-container {
+      width: 90%; /* Adjusted width */
+      margin: 20px auto; /* Adjusted margin */
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
 
-      #open-your-heart {
-        position: absolute;
-        top: -200%; /* Adjust the top value to position above the heart container */
-        left: 55%;
-        transform: translateX(-50%);
-        font-size: 2.0rem;
-        color: #0c0c0c;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        z-index: 1;
-      }
+<div id="letter-container">
+  <h2 id="open-your-heart" style="font-size: 15px;">❤️Happy Birthday Baby</h2>
+  <img src="Fumo.jpeg" alt="Heart Image" style="width: 300px; height: auto; position: absolute; top: -2%; left: 17%; z-index: 1;">
+  <div class="heart-container">
+    <div class="heart-1"></div>
+    <div class="heart-2"></div>
+    <div class="heart-3" onclick="openNewPage()"></div>
+    <div id="click-me-text">Click Me!<span class="heart-emoji">🤍</span></div>
+  </div>
+  <p id="To-Fumo"></p>
+</div>
 
-      #love-letter-container {
-        width: 60%;
-        text-align: left;
-        padding: 20px;
-        background-color: #ff66b2; /* Dark pink background */
-        border: 5px solid black; /* Light pink border */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        margin: 0 auto;
-        overflow: hidden; /* Hide the overflow to create a scrolling effect */
-      }
-  
-    </style>
-  </head>
-  <body>
-    <img src="Fumo.jpeg" alt="Heart Image" style="width: 300px; height: auto; position: absolute; top: -2%; left: 17%; z-index: 1;">
-    <!-- <img src="///home/luna/To Hood/pinks.png" alt="Heart Image" style="width: 200px; height: auto; position: absolute; top: 15%; left: 61%; z-index: 1;">
-    <img src="///home/luna/To Hood/pinks.png" alt="Heart Image" style="width: 200px; height: auto; position: absolute; top: 15%; left: 35%; z-index: 1;"> -->
-    <div id="letter-container">
-     <h2 id="open-your-heart" style="font-size: 15px;">❤️Happy Birthday Baby</h2>
-        <div class="heart-container">
-          <div class="heart-1"></div>
-          <div class="heart-2"></div>
-          <div class="heart-3" onclick="openNewPage()"></div>
-          <div id="click-me-text">Click Me!<span class="heart-emoji">🤍</span></div>
-        </div>
-        <p id="To-Fumo"></p>
-      </div>
-      
+<script>
+  function openNewPage() {
+    var newWindow = window.open('', '_blank');
+    newWindow.document.write(`
+      <!DOCTYPE html>
+      <html lang="en">
+        <head>
+          <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>To Fumo❤️</title>
+          <style>
+            body {
+              font-family: 'American Typewriter', sans-serif;
+              text-align: right;
+              margin: 5px;
+            }
 
-    <script>
-      function openNewPage() {
-        // Open a new window/page when the button (heart-3) is clicked
-        var newWindow = window.open('', '_blank');
-      
-        // Write the initial HTML structure to the new window
-        newWindow.document.write(`
-          <!DOCTYPE html>
-          <html lang="en">
-            <head>
-              <meta charset="UTF-8" />
-              <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-              <title>To Fumo❤️</title>
-              <style>
-                body {
-                  font-family: 'American Typewriter', sans-serif;
-                  text-align: right;
-                  margin: 5px;
-                }
-
-                #love-letter-container {
-                  width: 80%;
-                  text-align: left;
-                  padding: 20px;
-                  background-color: #ff66b2; /* Dark pink background */
-                  border: 5px solid #fb6c1; /* Light pink border */
-                  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-                  margin: 0 auto;
-                }
-              </style>
-            </head>
-            <body>
-              <div id="love-letter-container">
-                <h2>To Fumo❤️</h2>
-                <p>IHappy Birthday sthandwa sam🫦❤️the day I've been waiting for has finally come, my King's special day🥳!The sunshine of my life, the person who is always putting in effort for the sake of my happiness❤️. I appreciate you with all my heart King👑💗!!And I am so excited to celebrate your special day with you😍💋!!
-
-                  27 years ago today God blessed us with an amazing being🫦💋and today I have  the honour of calling him my man! 💋💗I just wanted to take this opportunity to let you know what is in my heart.I hope you know how much I appreciate everything you do for me and all the time you give to me.💗even though I always want more attention lol. It means more than you can possibly imagine. Being with you makes my entire day brighter❤️.
-                  
-                  
-                  Your smile, your onion eyes😭, and the way you look at me. I love those things, those tiny insignificant things that make you you.💗 I don't think I'll stop feeling butterflies whenever I am around you.
-                  
-                  
-                  I don't think I'll ever be able to stop myself from being the happiest human whenever i see you. ❤️I won't ever stop choosing you, and "liking" you with everything I am😭😭. I know this is a bad analogy but it's like my soul was a rhythm and yours was a beat. My Rhythm had nothing to follow it was a beautiful mess of jumbled notes, while yours was an unwavering beat strong and loud. Together we're music. A perfect melody. ❤️
-                  
-                  My soul can only exist in harmony with yours it seems and I wouldn't want it any other way❤️. You're the most handsomeeee, loving, funniest and remarkable man I know. There are so many lives I want to live with you Bubu😍. I know we have fucked up a few times in the past, and that made us have those rough patches, but i am certaim that we will always get stronger in the end.💗
-                  Thank you for sticking by my side, and for always being there for me, I appreciate you King❤️. Looking forward to growing in love with you, looking forward to truly knowing you and understanding you on a much deeper level than I already do. May the 27th chapter of your life be kind to you and may God bless you with happiness,abundance and infinite blessings sthandwa sam❤️.  I ❤️ YOU MY ONE IN A MILLION HANDSOME VENDA NIGGA!!!</p>
-              </div>
-            </body>
-          </html>
-        `);
-
-        // Close the new window after writing the content
-        newWindow.document.close();
-      }
-    </script>
-  </body>
+            #love-letter-container {
+              width: 80%;
+              text-align: left;
+              padding: 20px;
+              background-color: #ff66b2;
+              border: 5px solid #fb6c1;
+              box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+              margin: 0 auto;
+            }
+          </style>
+        </head>
+        <body>
+          <div id="love-letter-container">
+            <h2>To Fumo❤️</h2>
+            <p>IHappy Birthday sthandwa sam🫦❤️the day I've been waiting for has finally come, my King's special day🥳!The sunshine of my life, the person who is always putting in effort for the sake of my happiness❤️. I appreciate you with all my heart King👑💗!!And I am so excited to celebrate your special day with you😍💋!!
+              27 years ago today God blessed us with an amazing being🫦💋and today I have  the honour of calling him my man! 💋💗I just wanted to take this opportunity to let you know what is in my heart.I hope you know how much I appreciate everything you do for me and all the time you give to me.💗even though I always want more attention lol. It means more than you can possibly imagine. Being with you makes my entire day brighter❤️.
+              Your smile, your onion eyes😭, and the way you look at me. I love those things, those tiny insignificant things that make you you.💗 I don't think I'll stop feeling butterflies whenever I am around you.
+              I don't think I'll ever be able to stop myself from being the happiest human whenever i see you. ❤️I won't ever stop choosing you, and "liking" you with everything I am😭😭. I know this is a bad analogy but it's like my soul was a rhythm and yours was a beat. My Rhythm had nothing to follow it was a beautiful mess of jumbled notes, while yours was an unwavering beat strong and loud. Together we're music. A perfect melody. ❤️
+              My soul can only exist in harmony with yours it seems and I wouldn't want it any other way❤️. You're the most handsomeeee, loving, funniest and remarkable man I know. There are so many lives I want to live with you Bubu😍. I know we have fucked up a few times in the past, and that made us have those rough patches, but i am certaim that we will always get stronger in the end.💗
+              Thank you for sticking by my side, and for always being there for me, I appreciate you King❤️. Looking forward to growing in love with you, looking forward to truly knowing you and understanding you on a much deeper level than I already do. May the 27th chapter of your life be kind to you and may God bless you with happiness,abundance and infinite blessings sthandwa sam❤️.  I ❤️ YOU MY ONE IN A MILLION HANDSOME VENDA NIGGA!!!</p>
+          </div>
+        </body>
+      </html>
+    `);
+    newWindow.document.close();
+  }
+</script>
+</body>
 </html>
